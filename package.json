@@ -6,12 +6,12 @@
   "homepage": "https://hadynz.github.io/linearcycle-pathforward/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --outDir build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "tsc --noemit && eslint . --ext .ts",
     "prettier": "prettier --write '**/*.{ts,tsx,css,html}'",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --dist dist"
   },
   "dependencies": {
     "react": "^18.2.0",
