@@ -30,6 +30,8 @@ module.exports = {
         tsconfigRootDir: __dirname,
       },
       rules: {
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-sort-props': [2],
         'simple-import-sort/imports': [
           'error',
           {
