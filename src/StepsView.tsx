@@ -67,6 +67,7 @@ function StepsView() {
       onConnect={onConnect}
       onEdgesChange={onEdgesChange}
       onNodesChange={onNodesChange}
+      proOptions={{ hideAttribution: true }}
     />
   );
 }
