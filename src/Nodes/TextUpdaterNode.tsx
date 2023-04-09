@@ -8,6 +8,7 @@ export type TextUpdaterNodeData = {
 
 function TextUpdaterNode({ data }: NodeProps<TextUpdaterNodeData>) {
   console.log('data', data);
+
   const onChange = useCallback((evt: ChangeEvent<HTMLInputElement>) => {
     console.log(evt.target.value);
   }, []);

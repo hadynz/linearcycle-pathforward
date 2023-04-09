@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  dagre:
+    specifier: ^0.8.5
+    version: 0.8.5
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -12,6 +15,9 @@ dependencies:
     version: 11.7.0(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
+  '@types/dagre':
+    specifier: ^0.7.48
+    version: 0.7.48
   '@types/react':
     specifier: ^18.0.28
     version: 18.0.28
@@ -666,6 +672,10 @@ packages:
       '@types/d3-zoom': 3.0.2
     dev: false
 
+  /@types/dagre@0.7.48:
+    resolution: {integrity: sha512-rF3yXSwHIrDxEkN6edCE4TXknb5YSEpiXfLaspw1I08grC49ZFuAVGOQCmZGIuLUGoFgcqGlUFBL/XrpgYpQgw==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@types/dagre/-/dagre-0.7.48.tgz}
+    dev: true
+
   /@types/geojson@7946.0.10:
     resolution: {integrity: sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@types/geojson/-/geojson-7946.0.10.tgz}
     dev: false
@@ -1085,6 +1095,13 @@ packages:
       d3-interpolate: 3.0.1
       d3-selection: 3.0.0
       d3-transition: 3.0.1(d3-selection@3.0.0)
+    dev: false
+
+  /dagre@0.8.5:
+    resolution: {integrity: sha512-/aTqmnRta7x7MCCpExk7HQL2O4owCT2h8NT//9I1OQ9vt29Pa0BzSAkR5lwFUcQ7491yVi/3CXU9jQ5o0Mn2Sw==, tarball: https://packages.atlassian.com/api/npm/npm-remote/dagre/-/dagre-0.8.5.tgz}
+    dependencies:
+      graphlib: 2.1.8
+      lodash: 4.17.21
     dev: false
 
   /debug@4.3.4:
@@ -1663,6 +1680,12 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz}
     dev: true
 
+  /graphlib@2.1.8:
+    resolution: {integrity: sha512-jcLLfkpoVGmH7/InMC/1hIvOPSUh38oJtGhvrOFGzioE1DZ+0YW16RgmOJhHiuWTvGiJQ9Z1Ik43JvkRPRvE+A==, tarball: https://packages.atlassian.com/api/npm/npm-remote/graphlib/-/graphlib-2.1.8.tgz}
+    dependencies:
+      lodash: 4.17.21
+    dev: false
+
   /has-bigints@1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/has-bigints/-/has-bigints-1.0.2.tgz}
     dev: true
@@ -1924,6 +1947,10 @@ packages:
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/lodash.merge/-/lodash.merge-4.6.2.tgz}
     dev: true
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, tarball: https://packages.atlassian.com/api/npm/npm-remote/lodash/-/lodash-4.17.21.tgz}
+    dev: false
 
   /loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==, tarball: https://packages.atlassian.com/api/npm/npm-remote/loose-envify/-/loose-envify-1.4.0.tgz}

@@ -1,69 +1,95 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import ReactFlow, {
   addEdge,
-  applyEdgeChanges,
-  applyNodeChanges,
-  DefaultEdgeOptions,
+  Connection,
+  ConnectionLineType,
   Edge,
-  FitViewOptions,
+  MarkerType,
   Node,
-  NodeTypes,
-  OnConnect,
-  OnEdgesChange,
-  OnNodesChange,
+  Position,
+  useEdgesState,
+  useNodesState,
 } from 'reactflow';
+import dagre from 'dagre';
 
-import TextUpdaterNode, { TextUpdaterNodeData } from './Nodes/TextUpdaterNode';
+import { initialEdges, initialNodes } from './node-edges';
 
-const nodeTypes: NodeTypes = { textUpdater: TextUpdaterNode };
+const nodeSize = { width: 172, height: 36 };
 
-const initialNodes: Node[] = [
-  {
-    id: '1',
-    data: { title: 'Linear cycles', description: 'Linear cycles' },
-    position: { x: 5, y: 5 },
-    type: 'textUpdater',
-  } as Node<TextUpdaterNodeData>,
-  { id: '2', data: { label: 'World Changing Business' }, position: { x: 5, y: 100 } },
-];
-
-const initialEdges: Edge[] = [{ id: 'e1-2', source: '1', target: '2' }];
-
-const fitViewOptions: FitViewOptions = {
-  padding: 0.2,
+type LayedOutElements = {
+  nodes: Node[];
+  edges: Edge[];
 };
 
-const defaultEdgeOptions: DefaultEdgeOptions = {
-  animated: true,
+const getLayoutedElements = (nodes: Node[], edges: Edge[]): LayedOutElements => {
+  const g = new dagre.graphlib.Graph();
+
+  g.setDefaultEdgeLabel(() => ({}));
+  g.setGraph({ rankdir: 'LR' });
+
+  nodes.forEach((node) => {
+    g.setNode(node.id, { ...nodeSize });
+  });
+
+  edges.forEach((edge) => {
+    g.setEdge(edge.source, edge.target);
+  });
+
+  dagre.layout(g);
+
+  nodes.forEach((node) => {
+    const nodeWithPosition = g.node(node.id);
+    node.targetPosition = 'left' as Position;
+    node.sourcePosition = 'right' as Position;
+    node.position = {
+      x: nodeWithPosition.x - nodeSize.width,
+      y: nodeWithPosition.y - nodeSize.height,
+    };
+
+    return node;
+  });
+
+  return {
+    nodes,
+    edges: edges.map((edge) => ({
+      ...edge,
+      type: 'smoothstep',
+      markerEnd: {
+        type: MarkerType.ArrowClosed,
+        width: 20,
+        height: 20,
+        color: '#FF0072',
+      },
+      style: {
+        strokeWidth: 2,
+        stroke: '#FF0072',
+      },
+    })),
+  };
 };
+
+const { nodes: layedOutNodes, edges: layedOutEdges } = getLayoutedElements(
+  initialNodes,
+  initialEdges
+);
 
 function StepsView() {
-  const [nodes, setNodes] = useState<Node[]>(initialNodes);
-  const [edges, setEdges] = useState<Edge[]>(initialEdges);
+  const [nodes, , onNodesChange] = useNodesState(layedOutNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(layedOutEdges);
 
-  const onNodesChange: OnNodesChange = useCallback(
-    (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-    [setNodes]
-  );
-
-  const onEdgesChange: OnEdgesChange = useCallback(
-    (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
-    [setEdges]
-  );
-
-  const onConnect: OnConnect = useCallback(
-    (connection) => setEdges((eds) => addEdge(connection, eds)),
+  const onConnect = useCallback(
+    (params: Connection) =>
+      setEdges((edge) => addEdge({ ...params, type: ConnectionLineType.SmoothStep }, edge)),
     [setEdges]
   );
 
   return (
     <ReactFlow
-      defaultEdgeOptions={defaultEdgeOptions}
       edges={edges}
       fitView
-      fitViewOptions={fitViewOptions}
-      nodeTypes={nodeTypes}
       nodes={nodes}
+      nodesConnectable={false}
+      nodesDraggable={false}
       onConnect={onConnect}
       onEdgesChange={onEdgesChange}
       onNodesChange={onNodesChange}
