@@ -1,6 +1,6 @@
 import { ReactFlowProvider } from 'reactflow';
 
-import StepsView from './StepsView';
+import StepsView from './views/StepsView';
 
 function App() {
   return (
