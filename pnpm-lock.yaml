@@ -10,27 +10,15 @@ dependencies:
   '@fontsource/public-sans':
     specifier: ^4.5.12
     version: 4.5.12
+  '@mui/icons-material':
+    specifier: ^5.11.16
+    version: 5.11.16(@mui/material@5.11.16)(@types/react@18.0.28)(react@18.2.0)
   '@mui/joy':
     specifier: 5.0.0-alpha.74
     version: 5.0.0-alpha.74(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
-  Avatar:
-    specifier: link:@mui/joy/Avatar
-    version: link:@mui/joy/Avatar
-  AvatarGroup:
-    specifier: link:@mui/joy/AvatarGroup
-    version: link:@mui/joy/AvatarGroup
-  Box:
-    specifier: link:@mui/joy/Box
-    version: link:@mui/joy/Box
-  Card:
-    specifier: link:@mui/joy/Card
-    version: link:@mui/joy/Card
-  Chip:
-    specifier: link:@mui/joy/Chip
-    version: link:@mui/joy/Chip
-  Typography:
-    specifier: link:@mui/joy/Typography
-    version: link:@mui/joy/Typography
+  '@mui/material':
+    specifier: ^5.11.16
+    version: 5.11.16(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
   dagre:
     specifier: ^0.8.5
     version: 0.8.5
@@ -1923,6 +1911,23 @@ packages:
     resolution: {integrity: sha512-GxRfZ/HquQ/1nUc9qQVGReP6oOMS8/3QjPJ+23a7TMrxl2wjlmXrMNn7tRa30vZcGcDgEG+J0aseefUN0AoawQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@mui/core-downloads-tracker/-/core-downloads-tracker-5.11.16.tgz}
     dev: false
 
+  /@mui/icons-material@5.11.16(@mui/material@5.11.16)(@types/react@18.0.28)(react@18.2.0):
+    resolution: {integrity: sha512-oKkx9z9Kwg40NtcIajF9uOXhxiyTZrrm9nmIJ4UjkU2IdHpd4QVLbCc/5hZN/y0C6qzi2Zlxyr9TGddQx2vx2A==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@mui/icons-material/-/icons-material-5.11.16.tgz}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.0.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@mui/material': 5.11.16(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
+      '@types/react': 18.0.28
+      react: 18.2.0
+    dev: false
+
   /@mui/joy@5.0.0-alpha.74(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-qtrkVZ7fz6qL+m2KI/ULwHpMSdagB8xlbMRLtWNSno4KTLNuixlYkk1eGzMrTQVPCBhm69l4gprWa3OEPElcEg==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@mui/joy/-/joy-5.0.0-alpha.74.tgz}
     engines: {node: '>=12.0.0'}
@@ -1955,6 +1960,42 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-is: 18.2.0
+    dev: false
+
+  /@mui/material@5.11.16(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-++glQqbZ3rMzOWB77yOvqRG+k8+scYTUKVWZpWff+GWsf6L10g9L2wgRhhAS8bDLuxCbXZlPNbSZowXDDw6z6Q==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@mui/material/-/material-5.11.16.tgz}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@emotion/react': ^11.5.0
+      '@emotion/styled': ^11.3.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/react':
+        optional: true
+      '@emotion/styled':
+        optional: true
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@emotion/react': 11.10.6(@types/react@18.0.28)(react@18.2.0)
+      '@emotion/styled': 11.10.6(@emotion/react@11.10.6)(@types/react@18.0.28)(react@18.2.0)
+      '@mui/base': 5.0.0-alpha.124(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/core-downloads-tracker': 5.11.16
+      '@mui/system': 5.11.16(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.28)(react@18.2.0)
+      '@mui/types': 7.2.3(@types/react@18.0.28)
+      '@mui/utils': 5.11.13(react@18.2.0)
+      '@types/react': 18.0.28
+      '@types/react-transition-group': 4.4.5
+      clsx: 1.2.1
+      csstype: 3.1.2
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-is: 18.2.0
+      react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /@mui/private-theming@5.11.13(@types/react@18.0.28)(react@18.2.0):
@@ -3584,6 +3625,12 @@ packages:
       '@types/react': 18.0.28
     dev: false
 
+  /@types/react-transition-group@4.4.5:
+    resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@types/react-transition-group/-/react-transition-group-4.4.5.tgz}
+    dependencies:
+      '@types/react': 18.0.28
+    dev: false
+
   /@types/react@18.0.28:
     resolution: {integrity: sha512-RD0ivG1kEztNBdoAK7lekI9M+azSnitIn85h4iOiaLjaTrMjzslhaqCGaI4IyCJ1RljWiLCEu4jyrLLgqxBTew==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@types/react/-/react-18.0.28.tgz}
     dependencies:
@@ -4774,6 +4821,13 @@ packages:
   /dom-accessibility-api@0.5.16:
     resolution: {integrity: sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg==, tarball: https://packages.atlassian.com/api/npm/npm-remote/dom-accessibility-api/-/dom-accessibility-api-0.5.16.tgz}
     dev: true
+
+  /dom-helpers@5.2.1:
+    resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==, tarball: https://packages.atlassian.com/api/npm/npm-remote/dom-helpers/-/dom-helpers-5.2.1.tgz}
+    dependencies:
+      '@babel/runtime': 7.21.0
+      csstype: 3.1.2
+    dev: false
 
   /dotenv-expand@10.0.0:
     resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==, tarball: https://packages.atlassian.com/api/npm/npm-remote/dotenv-expand/-/dotenv-expand-10.0.0.tgz}
@@ -7347,6 +7401,20 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/react-refresh/-/react-refresh-0.14.0.tgz}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-transition-group@4.4.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==, tarball: https://packages.atlassian.com/api/npm/npm-remote/react-transition-group/-/react-transition-group-4.4.5.tgz}
+    peerDependencies:
+      react: '>=16.6.0'
+      react-dom: '>=16.6.0'
+    dependencies:
+      '@babel/runtime': 7.21.0
+      dom-helpers: 5.2.1
+      loose-envify: 1.4.0
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/react/-/react-18.2.0.tgz}

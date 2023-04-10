@@ -12,19 +12,23 @@ const initialData: InitialData[] = [
     id: 'kickoff',
     title: 'Kick Off',
     description: 'Kick off the project with a kickoff meeting',
+    tags: ['meeting', 'project'],
   },
   {
     id: 'discovery',
     title: 'Discovery',
     description: 'Discover the problem and the solution',
+    tags: ['meeting'],
   },
   {
     id: 'design-explore',
     title: 'Design Exploration',
+    tags: ['discovery'],
   },
   {
     id: 'eng-explore',
     title: 'Engineering Exploration',
+    tags: ['discovery'],
   },
   {
     id: 'build',
